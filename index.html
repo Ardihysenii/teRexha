@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bydrive - Luxury Car Rentals</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-black: #000000;
+      --text-grey: #666666;
+      --border-light: #ececec;
+      --bg-circle: #f3f3f3;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    /* --- NAVBAR --- */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 5%;
+      background: white;
+      border-bottom: 1px solid var(--border-light);
+      z-index: 1001; /* Mbi overlay */
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 80px;
+      display: block;
+    }
+
+    .company-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary-black);
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary-black);
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .nav-right {
+      display: none;
+      align-items: center;
+      cursor: pointer;
+      font-size: 28px;
+      z-index: 1002;
+      width: 30px;
+      text-align: center;
+    }
+
+    /* --- HERO SECTION --- */
+    .hero {
+      position: relative;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      padding: 0 5%;
+      margin-top: 80px;
+    }
+
+    .hero-content {
+      width: 45%;
+      z-index: 2;
+    }
+
+    .hero-content h1 {
+      font-size: 64px;
+      line-height: 1.1;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: var(--primary-black);
+    }
+
+    .hero-content p {
+      font-size: 18px;
+      color: var(--text-grey);
+      max-width: 400px;
+    }
+
+    /* --- BACKGROUND CIRCLES & CAR --- */
+    .hero-visual {
+      position: absolute;
+      right: -5%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 60%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .circle-bg {
+      position: absolute;
+      width: 650px;
+      height: 650px;
+      border: 1px solid #e0e0e0;
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .circle-bg::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 85%;
+      height: 85%;
+      border: 1px solid #f0f0f0;
+      border-radius: 50%;
+    }
+
+    .circle-bg::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 115%;
+      height: 115%;
+      border: 1px solid #f5f5f5;
+      border-radius: 50%;
+    }
+
+    .car-img {
+      width: 100%;
+      max-width: 800px;
+      z-index: 1;
+      filter: drop-shadow(0 30px 50px rgba(0,0,0,0.1));
+    }
+
+    /* --- SEARCH BOX --- */
+    .search-container {
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      background: white;
+      padding: 15px 25px;
+      border-radius: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+      z-index: 10;
+    }
+
+    .search-container input {
+      border: none;
+      outline: none;
+      font-size: 16px;
+      width: 100%;
+      font-weight: 600;
+    }
+
+    /* --- BRAND LOGOS --- */
+    .brands-footer {
+      width: 100%;
+      padding: 40px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      opacity: 0.4;
+      border-top: 1px solid #f9f9f9;
+    }
+
+    .brand-item {
+      font-size: 24px;
+      font-weight: bold;
+      filter: grayscale(1);
+    }
+
+    /* --- MOBILE RESPONSIVE & OVERLAY --- */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        display: none;
+        z-index: 1000;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        font-size: 22px;
+      }
+
+      .nav-right {
+        display: flex;
+      }
+
+      .hero {
+        flex-direction: column;
+        height: auto;
+        padding-top: 60px;
+        text-align: center;
+      }
+
+      .hero-content {
+        width: 100%;
+        margin-bottom: 40px;
+      }
+
+      .hero-content h1 {
+        font-size: 40px;
+      }
+
+      .hero-content p {
+        margin: 0 auto;
+      }
+
+      .hero-visual {
+        position: relative;
+        width: 100%;
+        right: 0;
+        transform: none;
+        top: 0;
+        margin-top: 20px;
+      }
+
+      .circle-bg {
+        width: 350px;
+        height: 350px;
+      }
+
+      .search-container {
+        position: relative;
+        width: 90%;
+        bottom: 0;
+        left: 0;
+        transform: none;
+        margin: 40px auto;
+      }
+
+      .brands-footer {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <img src="/img/download (7)-Picsart-AiImageEnhancer.png" alt="bydrive">
+    <span class="company-name">teRexha</span>
+  </div>
+
+  <div class="nav-links" id="navLinks">
+    <a href="#">All Cars</a>
+    <a href="#">Our Services</a>
+    <a href="#">Dealership</a>
+    <a href="#">Reviews</a>
+    <a href="#">Contact Us</a>
+    <a href="#">Preview All Pages</a>
+    <a href="#">Purchase Template</a>
+  </div>
+
+  <div class="nav-right" id="menuBtn">
+    <span id="menuIcon">☰</span>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>The largest luxury car rentals marketplace</h1>
+    <p>Our team offering you a wide selection of high-end cars for rent</p>
+  </div>
+
+  <div class="hero-visual">
+    <div class="circle-bg"></div>
+    <img src="/img/download (5)-Picsart-AiImageEnhancer (1)-Picsart-AiImageEnhancer-Picsart-AiImageEnhancer.png" alt="Rolls Royce" class="car-img">
+  </div>
+
+  <div class="search-container">
+    <input type="text" placeholder="Car brand, model, and etc.">
+  </div>
+</section>
+
+<div class="brands-footer">
+  <div class="brand-item">Mercedes Benz</div>
+</div>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  const menuIcon = document.getElementById('menuIcon');
+
+  menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    if (navLinks.classList.contains('active')) {
+      menuIcon.innerHTML = '✕';
+      document.body.style.overflow = 'hidden';
+    } else {
+      menuIcon.innerHTML = '☰';
+      document.body.style.overflow = 'auto';
+    }
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      menuIcon.innerHTML = '☰';
+      document.body.style.overflow = 'auto';
+    });
+  });
+</script>
+
+</body>
+</html>
