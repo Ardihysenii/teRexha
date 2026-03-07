@@ -6,6 +6,7 @@
   <title>Bydrive - Luxury Car Rentals</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
   <style>
+
     :root {
       --primary-black: #000000;
       --text-grey: #666666;
@@ -45,6 +46,8 @@
       align-items: center;
       gap: 12px;
       text-decoration: none;
+      position: relative;
+      z-index: 1005; /* Sigurohet që rri mbi menunë mobile */
     }
 
     .logo img {
@@ -78,7 +81,7 @@
       align-items: center;
       cursor: pointer;
       font-size: 28px;
-      z-index: 1002;
+      z-index: 1005; /* Sigurohet që rri mbi menunë mobile */
       width: 30px;
       text-align: center;
     }
@@ -201,7 +204,7 @@
       width: 100%;
       padding: 40px 5%;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       opacity: 0.4;
       border-top: 1px solid #f9f9f9;
@@ -226,16 +229,24 @@
         justify-content: center;
         align-items: center;
         gap: 30px;
-        display: none;
         z-index: 1000;
-      }
 
-      .nav-links.active {
+        /* Animacioni për shfaqje smooth */
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
         display: flex;
       }
 
+      .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
       .nav-links a {
-        font-size: 22px;
+        font-size: 26px; /* Më e madhe për overlay */
+        font-weight: 800;
+        text-transform: uppercase;
       }
 
       .nav-right {
@@ -482,6 +493,310 @@
         margin-top: 20px;
       }
     }
+
+
+
+
+
+    /* --- AUTO REPAIR SERVICES SECTION --- */
+    .auto-services-section {
+      padding: 60px 5%;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+    }
+
+    .auto-services-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    /* Fotoja majtas */
+    .auto-services-image {
+      flex: 1;
+    }
+
+    .auto-services-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Pjesa e informacionit djathtas */
+    .auto-services-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Kutia e zezë e titullit */
+    .black-title-box {
+      background-color: #000;
+      padding: 30px 40px;
+      margin-bottom: 40px;
+      width: 100%;
+    }
+
+    .black-title-box h2 {
+      color: #fff;
+      font-size: 56px; /* Madhësi e madhe si në foto */
+      line-height: 0.9;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -1px;
+    }
+
+    /* Grid-i i tekstit me dy kolona */
+    .services-text-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      padding-left: 10px;
+    }
+
+    .text-column p {
+      font-size: 15px;
+      line-height: 1.5;
+      color: #000;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    /* --- RESPONSIVE PER TELEFON --- */
+    /* --- RESPONSIVE PER TELEFON --- */
+    @media (max-width: 992px) {
+      .auto-services-container {
+        flex-direction: column; /* I rreshton elementet vertikalisht */
+        gap: 20px;
+      }
+
+      /* Titulli dhe teksti dalin të parët (Order 1) */
+      .order-mobile-1 {
+        order: 1;
+        width: 100%;
+      }
+
+      /* Fotoja del e dyta (Order 2) */
+      .order-mobile-2 {
+        order: 2;
+        width: 100%;
+      }
+
+      .black-title-box {
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .black-title-box h2 {
+        font-size: 32px; /* Madhësi më e përshtatshme për telefon */
+      }
+
+      .services-text-grid {
+        grid-template-columns: 1fr; /* Kolonat e tekstit bëhen 1 mbi 1 */
+        margin-bottom: 20px;
+        padding-left: 0;
+      }
+    }
+
+
+
+
+
+
+
+    .detailed-services {
+      display: flex;
+      width: calc(100% - 20px);
+      margin: 10px auto;
+      /* HOQËM BACKGROUND-IN E ZI KËTU QË TË MOS KRIJOJË VIJA */
+      border: 1px solid #fff;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .service-block {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Sigurohemi që nuk ka border-right që krijon vija */
+    .maintenance-block {
+      border-right: none;
+    }
+
+    .block-visual {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background-color: #f5f5f5;
+    }
+
+    .block-title {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      z-index: 2;
+      font-size: 38px;
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+    /* --- NGJYRAT STANDARD (Rreshti 1) --- */
+    /* E majta (Maintenance) = E ZEZË */
+    .maintenance-block .block-list-container { background-color: #000; }
+    .maintenance-block .service-list li { color: #fff; }
+    .maintenance-block .block-title { color: #fff; }
+
+    /* E djathta (Brake) = E BARDHË */
+    .brake-block .block-list-container { background-color: #fff; }
+    .brake-block .service-list li { color: #000; }
+    .brake-block .block-title { color: #000; }
+
+    .block-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .block-list-container {
+      padding: 10px 30px 20px;
+      flex-grow: 1; /* Lejon sfondin të mbushet plotësisht */
+    }
+
+    .service-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .service-list li {
+      font-size: 15px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      position: relative;
+      padding-left: 20px;
+      line-height: 1.1;
+    }
+
+    .service-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+    }
+
+    /* --- LOGJIKA REVERSE (Rreshti 2) --- */
+    /* E majta (Maintenance) bëhet E BARDHË */
+    .detailed-services.is-reversed .maintenance-block .block-list-container { background-color: #fff; }
+    .detailed-services.is-reversed .maintenance-block .service-list li { color: #000; }
+    .detailed-services.is-reversed .maintenance-block .block-title { color: #000; }
+
+    /* E djathta (Brake) bëhet E ZEZË */
+    .detailed-services.is-reversed .brake-block .block-list-container { background-color: #000; }
+    .detailed-services.is-reversed .brake-block .service-list li { color: #fff; }
+    .detailed-services.is-reversed .brake-block .block-title { color: #fff; }
+
+    /* Heqim çdo vije ndarëse që mund të mbetet */
+    .detailed-services.is-reversed .maintenance-block { border-right: none; }
+
+
+    @media (max-width: 992px) {
+      .detailed-services {
+        flex-direction: column;
+        width: calc(100% - 20px);
+        margin: 10px auto;
+      }
+      .maintenance-block {
+        border-right: none;
+        border-bottom: none;
+      }
+      .detailed-services.is-reversed .maintenance-block {
+        border-bottom: none;
+      }
+      .block-title { font-size: 28px; }
+    }
+
+
+
+    .titleee {
+      font-size: 56px;           /* Madhësia e madhe si në foto */
+      font-weight: 900;          /* Trashësia maksimale */
+      text-transform: uppercase; /* Shkronja të mëdha */
+      line-height: 0.9;          /* Ngjeshja vertikale */
+      letter-spacing: -2px;      /* Ngjeshja e shkronjave anash */
+      color: #000;               /* Ngjyra e zezë */
+      margin-left: 10px;         /* Rreshtimi me kornizën e seksioneve */
+      margin-bottom: 20px;       /* Hapësira para se me fillu fotot */
+      font-family: sans-serif;   /* Ose fonti që po përdor për titujt tjerë */
+    }
+
+    /* Për telefon, që mos me dalë jashtë ekranit */
+    @media (max-width: 768px) {
+      .titleee {
+        font-size: 36px;
+        letter-spacing: -1px;
+        margin-left: 10px;
+      }
+    }
+
+
+
+
+
+
+
+
+    /*Animacionnnnnnnniiii*/
+
+    /* Klasat që do të shtohen nga JS */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Animacioni për fotot e makinave/shërbimeve */
+    .img-zoom {
+      transform: scale(1.1);
+      transition: transform 1.5s cubic-bezier(0.2, 1, 0.3, 1);
+    }
+
+    .img-zoom.active {
+      transform: scale(1);
+    }
+
+    /* Vonesa për pikat e listës (Stagger) */
+    .service-list li {
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: all 0.5s ease;
+    }
+
+    .reveal.active .service-list li {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Krijon efektin kaskadë për pikat e listës */
+    .reveal.active .service-list li:nth-child(1) { transition-delay: 0.1s; }
+    .reveal.active .service-list li:nth-child(2) { transition-delay: 0.2s; }
+    .reveal.active .service-list li:nth-child(3) { transition-delay: 0.3s; }
+    .reveal.active .service-list li:nth-child(4) { transition-delay: 0.4s; }
+    .reveal.active .service-list li:nth-child(5) { transition-delay: 0.5s; }
   </style>
 </head>
 <body>
@@ -494,9 +809,9 @@
 
   <div class="nav-links" id="navLinks">
     <a href="index.html">Home</a>
-    <a href="#">Our Services</a>
+    <a href="#about">About Us</a>
+    <a href="#Service">Our Services</a>
     <a href="#">Our Staff</a>
-    <a href="#">About Us</a>
     <a href="#">Contact Us</a>
     <a href="#">Preview All Pages</a>
     <a href="#">Purchase Template</a>
@@ -546,9 +861,9 @@
 
 
 
-<section class="about-us">
-  <p class="about-tagline">About teRexha Auto Service</p>
-  <div class="divider-line"></div>
+<section class="about-us" id="about">
+  <p class="about-tagline">About Rexha Auto Service</p>
+
 
   <div class="about-container">
     <div class="about-left">
@@ -573,6 +888,187 @@
     </div>
   </div>
 </section>
+
+
+<section class="auto-services-section" id="Service">
+  <div class="auto-services-container">
+
+    <div class="auto-services-image order-mobile-2">
+      <img src="/img/unnamed3.jpg" alt="Auto Repair Service">
+    </div>
+
+    <div class="auto-services-info order-mobile-1">
+
+      <div class="black-title-box">
+        <h2>OUR AUTO REPAIR<br>SERVICES</h2>
+      </div>
+
+      <div class="services-text-grid">
+        <div class="text-column">
+          <p>Whether it's a quick oil change or a major repair, Sanders & Yung has you covered. Our certified mechanics use quality parts and modern equipment to get the job done right.</p>
+        </div>
+        <div class="text-column">
+          <p>Every service comes with our 24month/ 24,000-mile warranty.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<h1 class="titleee">Service Categories</h1>
+<br>
+<br>
+
+<section class="detailed-services">
+  <div class="service-block maintenance-block">
+    <div class="block-visual">
+      <h2 class="block-title">General Maintenance &<br>Inspections</h2>
+      <img src="/img/Termo.png" alt="Maintenance" class="block-img">
+    </div>
+    <div class="block-list-container">
+      <ul class="service-list">
+        <li>Oil Changes & Filter Replacement</li>
+        <li>Fluid Checks & Top-Offs</li>
+        <li>Multi-Point Vehicle Inspections</li>
+        <li>State Safety & Emissions Inspections</li>
+        <li>30K/60K/90K Mile Services</li>
+        <li>Belts & Hoses</li>
+        <li>Battery Testing & Replacement</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="service-block brake-block">
+    <div class="block-visual">
+      <h2 class="block-title">Brake Services</h2>
+      <img src="/img/disc.jpg" alt="Brakes" class="block-img">
+    </div>
+    <div class="block-list-container">
+      <ul class="service-list">
+        <li>Brake Pad & Rotor Replacement</li>
+        <li>Brake Fluid Flush</li>
+        <li>Brake Line Repair</li>
+        <li>ABS Diagnostics</li>
+        <li>Emergency Brake Service</li>
+        <li>Brake Inspections</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="detailed-services is-reversed">
+  <div class="service-block maintenance-block">
+    <div class="block-visual">
+      <h2 class="block-title">Engine &<br>Transmission</h2>
+      <img src="/img/1556e84d-bf18-4b16-8c25-81377d0db2d4.jpg" alt="Engine" class="block-img">
+    </div>
+    <div class="block-list-container">
+      <ul class="service-list">
+        <li>Engine Diagnostics & Repair</li>
+        <li>Transmission Fluid Service</li>
+        <li>Clutch Replacement</li>
+        <li>Timing Belt & Chain</li>
+        <li>Spark Plug Replacement</li>
+        <li>Fuel Injection Cleaning</li>
+        <li>Differential Service</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="service-block brake-block">
+    <div class="block-visual">
+      <h2 class="block-title">Tire &<br>Wheel Services</h2>
+      <img src="/img/1009674d-0ee5-49eb-8261-7f0630e95dc7.png" alt="Tires" class="block-img">
+    </div>
+    <div class="block-list-container">
+      <ul class="service-list">
+        <li>Tire Rotation & Balancing</li>
+        <li>Wheel Alignment</li>
+        <li>Flat Tire Repair</li>
+        <li>TPMS Sensor Service</li>
+        <li>Suspension Inspection</li>
+        <li>Custom Wheel Fitting</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="detailed-services">
+  <div class="service-block maintenance-block">
+    <div class="block-visual">
+      <h2 class="block-title">General Maintenance &<br>Inspections</h2>
+      <img src="/img/ac.png" alt="Maintenance" class="block-img">
+    </div>
+    <div class="block-list-container">
+      <ul class="service-list">
+        <li>Oil Changes & Filter Replacement</li>
+        <li>Fluid Checks & Top-Offs</li>
+        <li>Multi-Point Vehicle Inspections</li>
+        <li>State Safety & Emissions Inspections</li>
+        <li>30K/60K/90K Mile Services</li>
+        <li>Belts & Hoses</li>
+        <li>Battery Testing & Replacement</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="service-block brake-block">
+    <div class="block-visual">
+      <h2 class="block-title">Brake Services</h2>
+      <img src="/img/acum.png" alt="Brakes" class="block-img">
+    </div>
+    <div class="block-list-container">
+      <ul class="service-list">
+        <li>Brake Pad & Rotor Replacement</li>
+        <li>Brake Fluid Flush</li>
+        <li>Brake Line Repair</li>
+        <li>ABS Diagnostics</li>
+        <li>Emergency Brake Service</li>
+        <li>Brake Inspections</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="detailed-services is-reversed">
+  <div class="service-block maintenance-block">
+    <div class="block-visual">
+      <h2 class="block-title">Engine &<br>Transmission</h2>
+      <img src="/img/Unnamed2.jpg" alt="Engine" class="block-img">
+    </div>
+    <div class="block-list-container">
+      <ul class="service-list">
+        <li>Engine Diagnostics & Repair</li>
+        <li>Transmission Fluid Service</li>
+        <li>Clutch Replacement</li>
+        <li>Timing Belt & Chain</li>
+        <li>Spark Plug Replacement</li>
+        <li>Fuel Injection Cleaning</li>
+        <li>Differential Service</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="service-block brake-block">
+    <div class="block-visual">
+      <h2 class="block-title">Tire &<br>Wheel Services</h2>
+      <img src="/img/Unnamed.png" alt="Tires" class="block-img">
+    </div>
+    <div class="block-list-container">
+      <ul class="service-list">
+        <li>Tire Rotation & Balancing</li>
+        <li>Wheel Alignment</li>
+        <li>Flat Tire Repair</li>
+        <li>TPMS Sensor Service</li>
+        <li>Suspension Inspection</li>
+        <li>Custom Wheel Fitting</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
 
 <script>
   const menuBtn = document.getElementById('menuBtn');
@@ -613,6 +1109,95 @@
   document.addEventListener('click', () => {
     mapsMenu.classList.remove('show');
   });
+
+
+
+  // Gjen të gjithë linkat që nisin me # (About, Services, etj.)
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+
+      // Vetëm nëse linku është një ID (p.sh #services) dhe jo thjesht #
+      if (targetId.startsWith('#') && targetId.length > 1) {
+        e.preventDefault();
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+          const startPosition = window.pageYOffset;
+
+          // Distanca: -80px që Navbari mos t'ia hapi kokën titullit
+          const distance = targetPosition - startPosition - 80;
+          let startTime = null;
+
+          // Kohëzgjatja: 1000ms = 1 sekondë (mundesh me rrit në 1500 nëse e vëren shumë shpejt)
+          const duration = 1000;
+
+          function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const run = ease(timeElapsed, startPosition, distance, duration);
+            window.scrollTo(0, run);
+            if (timeElapsed < duration) requestAnimationFrame(animation);
+          }
+
+          function ease(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+          }
+
+          requestAnimationFrame(animation);
+        }
+      }
+    });
+  });
+
+
+
+
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+
+    // 1. Përgatit elementet për animacion
+    const sections = document.querySelectorAll('section, .detailed-services, .about-left, .auto-services-info');
+    const images = document.querySelectorAll('.car-img, .block-img, .auto-services-image img');
+
+    sections.forEach(el => el.classList.add('reveal'));
+    images.forEach(el => el.classList.add('img-zoom'));
+
+    // 2. Krijo Observer-in
+    const observerOptions = {
+      threshold: 0.1, // Fillon kur 10% e elementit duket
+      rootMargin: "0px 0px -50px 0px" // Fillon pak para se të hyjë plotësisht
+    };
+
+    const appearanceObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          // Nëse dëshiron që animacioni të ndodhë vetëm një herë:
+          // appearanceObserver.unobserve(entry.target);
+        } else {
+          // Fakultative: Hiqe nëse nuk dëshiron që elementet të zhduken kur bën scroll lart
+          entry.target.classList.remove('active');
+        }
+      });
+    }, observerOptions);
+
+    // 3. Aktivizo vëzhgimin për secilin element
+    sections.forEach(s => appearanceObserver.observe(s));
+    images.forEach(img => appearanceObserver.observe(img));
+
+    // 4. Hero Animation (Sapo të hapet faqja)
+    setTimeout(() => {
+      document.querySelector('.hero-content').classList.add('active');
+      document.querySelector('.car-img').classList.add('active');
+    }, 300);
+  });
+
 </script>
 
 </body>
