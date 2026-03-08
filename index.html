@@ -1106,6 +1106,31 @@
         gap: 50px;
       }
     }
+
+
+
+    /* FAST PACED WEBSITE CODE  */
+
+    /* I thotë browser-it të përdorë kartën grafike për çdo gjë që lëviz */
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      content-visibility: auto; /* Ngarkon imazhet vetëm kur duhen (Në browserat modern) */
+    }
+
+    /* Efekti kur ngarkohen imazhet që të mos duken "shëmtuar" kur shfaqen */
+    .fade-in {
+      animation: fadeIn 0.4s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
@@ -1667,6 +1692,65 @@
         }
       });
     });
+  });
+
+
+
+  /*  FAST PACED WEBSITE CODE  */
+  // 1. Përdorim Intersection Observer për të ngarkuar imazhet vetëm kur shihen
+  const optimizeImages = () => {
+    const images = document.querySelectorAll('img[data-src]');
+    const imageOptions = { threshold: 0, rootMargin: "0px 0px 300px 0px" }; // I ngarkon 300px para se t'i shohësh
+
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src; // Kalon nga data-src në src
+          img.classList.add('fade-in'); // Efekt zbutës
+          observer.unobserve(img);
+        }
+      });
+    }, imageOptions);
+
+    images.forEach(img => imageObserver.observe(img));
+  };
+
+  // 2. Optimizimi i performancës së eventeve (Scroll/Touch)
+  const optimizeEvents = () => {
+    // I thotë browser-it që këto evente nuk do ta bllokojnë scroll-in
+    document.addEventListener('touchstart', () => {}, { passive: true });
+    document.addEventListener('touchmove', () => {}, { passive: true });
+    document.addEventListener('wheel', () => {}, { passive: true });
+  };
+
+  // 3. "Fast Click" - Heq vonesën 300ms në telefon kur klikon linqet
+  const fastClick = () => {
+    const links = document.querySelectorAll('a, button');
+    links.forEach(link => {
+      link.addEventListener('touchstart', function() {
+        this.style.opacity = "0.7"; // Feedback i menjëhershëm vizual
+      }, { passive: true });
+    });
+  };
+
+  // 4. Ekzekutimi me prioritet (RequestAnimationFrame)
+  window.requestAnimationFrame(() => {
+    optimizeImages();
+    optimizeEvents();
+    fastClick();
+  });
+
+  // 5. Pre-fetching - Ngarkon resurset sapo mouse-i afrohet te një link
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('mouseenter', () => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) return; // Injoro anchor links
+      const prefetchLink = document.createElement('link');
+      prefetchLink.rel = 'prefetch';
+      prefetchLink.href = href;
+      document.head.appendChild(prefetchLink);
+    }, { once: true });
   });
 </script>
 </body>
