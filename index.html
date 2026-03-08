@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bydrive - Luxury Car Rentals</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/logo.png">
+  <link rel="shortcut icon" type="image/png" href="/img/logo.png">
+  <link rel="apple-touch-icon" href="/img/logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
   <style>
 
@@ -797,6 +801,311 @@
     .reveal.active .service-list li:nth-child(3) { transition-delay: 0.3s; }
     .reveal.active .service-list li:nth-child(4) { transition-delay: 0.4s; }
     .reveal.active .service-list li:nth-child(5) { transition-delay: 0.5s; }
+
+
+
+
+
+
+    /* Footer */
+    /* --- LIGHT FOOTER --- */
+    footer {
+      background-color: #ffffff; /* More whiteness */
+      color: var(--primary-black);
+      padding: 80px 5% 30px;
+      border-top: 1px solid var(--border-light); /* Subtle separation */
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 50px;
+    }
+
+    .footer-logo .company-name {
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .footer-logo p {
+      color: var(--text-grey);
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 320px;
+      margin-bottom: 25px;
+    }
+
+    /* Social Icons */
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--border-light);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      color: var(--primary-black);
+    }
+
+    .social-links a:hover {
+      background-color: var(--primary-black);
+      color: #ffffff;
+      border-color: var(--primary-black);
+    }
+
+    .footer-group h4 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+      font-weight: 800;
+    }
+
+    .footer-group ul {
+      list-style: none;
+    }
+
+    .footer-group ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-group ul li a {
+      text-decoration: none;
+      color: var(--text-grey);
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .footer-group ul li a:hover {
+      color: var(--primary-black);
+      padding-left: 5px; /* Subtle interaction */
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 30px;
+      font-size: 12px;
+      color: #999;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 768px) {
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+      }
+    }
+
+
+
+    /*Contact */
+
+    /* Container-i kryesor që mban gjithçka */
+    .contact-page-wrapper {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: 'Inter', sans-serif;
+      color: #1a1a1a;
+    }
+
+    /* Banner-i me foton abstrakte */
+    .contact-banner {
+      position: relative;
+      height: 450px;
+      border-radius: 20px;
+
+      /* Background i ri: Një përzierje e hijeve të karbonit dhe dritës së butë në qendër */
+      background:
+        radial-gradient(circle at 50% 40%, rgba(45, 45, 45, 1) 0%, rgba(10, 10, 10, 1) 100%);
+
+      /* Shtohet një teksturë shumë e lehtë (grain) për t'i dhënë pamje "premium" */
+      background-image:
+        radial-gradient(circle at 50% 40%, rgba(60, 60, 60, 0.4) 0%, rgba(0, 0, 0, 0.9) 100%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3 Trabant %3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      background-blend-mode: overlay;
+
+      overflow: hidden;
+      margin-bottom: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      /* Një hije e jashtme e lehtë që banneri të "ngrihet" nga faqja */
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+
+    /* Shto këtë për efektin "shimmer" (shkëlqim i lehtë) */
+    .contact-banner::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 50%);
+      pointer-events: none;
+    }
+
+    .banner-overlay {
+      padding: 50px;
+    }
+
+    .banner-title {
+      color: white;
+      font-size: clamp(40px, 8vw, 70px);
+      font-weight: 500;
+      margin-top: 20px;
+    }
+
+    .breadcrumb-tag {
+      position: absolute;
+      bottom: 30px;
+      right: 50px;
+      background: white;
+      padding: 10px 25px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* Layout-i me dy kolona */
+    .contact-main-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 100px;
+      margin-bottom: 80px;
+    }
+
+    .section-label {
+      color: #888;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .hero-text {
+      font-size: 48px;
+      line-height: 1.1;
+      font-weight: 600;
+      margin-bottom: 35px;
+    }
+
+    .sub-description {
+      color: #666;
+      max-width: 400px;
+      margin-bottom: 50px;
+      font-size: 15px;
+    }
+
+    .details-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .detail-block h4 {
+      color: #aaa;
+      font-weight: 400;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .detail-block p {
+      font-weight: 500;
+      margin: 2px 0;
+    }
+
+    .social-row {
+      display: flex;
+      gap: 20px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    /* Karta e Formës */
+    .form-container-card {
+      background: #f4f6f8;
+      padding: 50px;
+      border-radius: 35px;
+    }
+
+    .form-container-card h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .form-intro {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 40px;
+    }
+
+    .underlined-input {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #d1d1d1;
+      background: transparent;
+      padding: 15px 0;
+      margin-bottom: 25px;
+      outline: none;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .underlined-input:focus {
+      border-bottom-color: #000;
+    }
+
+    .black-btn {
+      background: #1a1a1a;
+      color: white;
+      border: none;
+      padding: 18px 35px;
+      border-radius: 40px;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    /* Map Section */
+    .map-wrapper {
+      width: 100%;
+      border-radius: 40px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .placeholder-map {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(100%);
+    }
+
+    /* Responsive për telefon */
+    @media (max-width: 900px) {
+      .contact-main-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -808,11 +1117,11 @@
   </div>
 
   <div class="nav-links" id="navLinks">
-    <a href="index.html">Home</a>
+    <a href="#home">Home</a>
     <a href="#about">About Us</a>
     <a href="#Service">Our Services</a>
-    <a href="#">Our Staff</a>
-    <a href="#">Contact Us</a>
+    <a href="#contact">Contact Us</a>
+    <a href="#map">Our Location</a>
     <a href="#">Preview All Pages</a>
     <a href="#">Purchase Template</a>
   </div>
@@ -822,10 +1131,10 @@
   </div>
 </nav>
 
-<section class="hero">
+<section class="hero" id="home">
   <div class="hero-content">
-    <h1>The largest luxury car rentals marketplace</h1>
-    <p>Our team offering you a wide selection of high-end cars for rent</p>
+    <h1>The largest luxury car mechanics marketplace</h1>
+    <p>Our network offers you a wide selection of certified mechanics for high-end cars.</p>
   </div>
 
   <div class="hero-visual">
@@ -965,13 +1274,13 @@
     </div>
     <div class="block-list-container">
       <ul class="service-list">
-        <li>Engine Diagnostics & Repair</li>
-        <li>Transmission Fluid Service</li>
-        <li>Clutch Replacement</li>
-        <li>Timing Belt & Chain</li>
+        <li>Check Engine Light Diagnostics</li>
+        <li>Engine Tune-Ups</li>
+        <li>Timing Belt Replacement</li>
+        <li>Head Gasket Repair</li>
+        <li>Engine Rebuild & Replacement</li>
+        <li>Fuel System Cleaning</li>
         <li>Spark Plug Replacement</li>
-        <li>Fuel Injection Cleaning</li>
-        <li>Differential Service</li>
       </ul>
     </div>
   </div>
@@ -983,12 +1292,11 @@
     </div>
     <div class="block-list-container">
       <ul class="service-list">
-        <li>Tire Rotation & Balancing</li>
-        <li>Wheel Alignment</li>
-        <li>Flat Tire Repair</li>
-        <li>TPMS Sensor Service</li>
-        <li>Suspension Inspection</li>
-        <li>Custom Wheel Fitting</li>
+        <li>Transmission Fluid Change</li>
+        <li>Transmission Diagnostics</li>
+        <li>Clutch Repair & Replacement</li>
+        <li>Transmission Rebuild</li>
+        <li>Automatic & Manual Transmission Service</li>
       </ul>
     </div>
   </div>
@@ -1002,13 +1310,11 @@
     </div>
     <div class="block-list-container">
       <ul class="service-list">
-        <li>Oil Changes & Filter Replacement</li>
-        <li>Fluid Checks & Top-Offs</li>
-        <li>Multi-Point Vehicle Inspections</li>
-        <li>State Safety & Emissions Inspections</li>
-        <li>30K/60K/90K Mile Services</li>
-        <li>Belts & Hoses</li>
-        <li>Battery Testing & Replacement</li>
+        <li>A/C Repair & Recharge</li>
+        <li>Heater Core Replacement</li>
+        <li>Climate Control Diagnostics</li>
+        <li>Coolant System Service</li>
+        <li>Radiator Repair & Replacement</li>
       </ul>
     </div>
   </div>
@@ -1020,12 +1326,12 @@
     </div>
     <div class="block-list-container">
       <ul class="service-list">
-        <li>Brake Pad & Rotor Replacement</li>
-        <li>Brake Fluid Flush</li>
-        <li>Brake Line Repair</li>
-        <li>ABS Diagnostics</li>
-        <li>Emergency Brake Service</li>
-        <li>Brake Inspections</li>
+        <li>Battery Service & Replacement</li>
+        <li>Alternator & Starter Repair</li>
+        <li>Electrical Diagnostics</li>
+        <li>Wiring Repair</li>
+        <li>Lighting Systems</li>
+        <li>Computer Module Programming</li>
       </ul>
     </div>
   </div>
@@ -1039,13 +1345,11 @@
     </div>
     <div class="block-list-container">
       <ul class="service-list">
-        <li>Engine Diagnostics & Repair</li>
-        <li>Transmission Fluid Service</li>
-        <li>Clutch Replacement</li>
-        <li>Timing Belt & Chain</li>
-        <li>Spark Plug Replacement</li>
-        <li>Fuel Injection Cleaning</li>
-        <li>Differential Service</li>
+        <li>Tire Sales & Installation</li>
+        <li>Tire Rotation & Balancing</li>
+        <li>Wheel Alignment (2-Wheel & 4-Wheel)</li>
+        <li>Flat Tire Repair</li>
+        <li>TPMS Service</li>
       </ul>
     </div>
   </div>
@@ -1057,17 +1361,152 @@
     </div>
     <div class="block-list-container">
       <ul class="service-list">
-        <li>Tire Rotation & Balancing</li>
-        <li>Wheel Alignment</li>
-        <li>Flat Tire Repair</li>
-        <li>TPMS Sensor Service</li>
+        <li>Shock & Strut Replacement</li>
+        <li>Power Steering Service</li>
+        <li>Ball Joint Replacement</li>
         <li>Suspension Inspection</li>
-        <li>Custom Wheel Fitting</li>
+        <li>Steering Component Repair</li>
       </ul>
     </div>
   </div>
 </section>
+<br>
+<br>
 
+
+
+
+<!-- Contact -->
+
+<div class="contact-page-wrapper" id="contact">
+  <header class="contact-banner">
+    <div class="banner-overlay">
+      <div class="logo-small">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
+      </div>
+      <h1 class="banner-title">Contacts</h1>
+    </div>
+    <div class="breadcrumb-tag">
+      <span>Home / Contacts</span>
+    </div>
+  </header>
+
+  <div class="contact-main-grid">
+
+    <div class="contact-info-panel">
+      <p class="section-label">/ get in touch /</p>
+      <h2 class="hero-text">We are always ready <br> to help you and <br> answer your questions</h2>
+      <p class="sub-description">
+        Pacific hake false trevally queen parrotfish black prickleback
+        mosshead warbonnet sweepart Greenling sleeper.
+      </p>
+
+      <div class="details-layout">
+        <div class="detail-block">
+          <h4>Call Center</h4>
+          <p>800 100 975 20 34</p>
+          <p>+ (123) 1800-234-5678</p>
+        </div>
+        <div class="detail-block">
+          <h4>Our Location</h4>
+          <p>Auto Service Te Rexha,</p>
+          <p>1103, Besianë 11000</p>
+        </div>
+        <div class="detail-block">
+          <h4>Email</h4>
+          <p>neuros@mail.co</p>
+        </div>
+        <div class="detail-block">
+          <h4>Social network</h4>
+          <div class="social-row">
+            <span>f</span>
+            <span>𝕏</span>
+            <span>in</span>
+            <span>y</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-container-card">
+      <h3>Get in Touch</h3>
+      <p class="form-intro">Define your goals and identify areas where AI can add value to your business.</p>
+
+      <form class="clean-form">
+        <input type="text" placeholder="Full name" class="underlined-input" >
+        <input type="email" placeholder="Email" class="underlined-input">
+        <input type="text" placeholder="Subject" class="underlined-input">
+        <textarea placeholder="Message" rows="4" class="underlined-input"></textarea>
+
+        <button type="submit" class="black-btn">
+          Send a message <span class="arrow">→</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div id="map" class="map-wrapper" style="width: 100%; border-radius: 40px; overflow: hidden; margin-top: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+    <iframe
+      width="100%"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2925.3214555816!2d21.1800!3d42.8892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDLCsDUzJzIxLjEiTiAyMcKwMTAnNTUuMiJF!5e0!3m2!1sqi!2s!4v1710000000000">
+    </iframe>
+  </div>
+</div>
+
+
+
+
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-logo">
+      <span class="company-name">teRexha</span>
+      <p>Luxury automotive care and precision mechanics. We treat every vehicle with the respect it deserves.</p>
+
+      <div class="social-links">
+        <a href="#" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        </a>
+        <a href="#" aria-label="TikTok">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-group">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#Service">Services</a></li>
+        <li><a href="#">Our Staff</a></li>
+        <li><a href="#">Our location</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-group">
+      <h4>Contact Info</h4>
+      <ul>
+        <li><a href="tel:+38344123456">+383 (0) 44 123 456</a></li>
+        <li><a href="mailto:info@terexha.com">info@terexha.com</a></li>
+        <li><a href="#">Podujevo, Kosovo</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2024 teRexha Auto Service. All rights reserved.</p>
+    <p>EST. 2004</p>
+  </div>
+</footer>
 
 
 <script>
@@ -1162,7 +1601,7 @@
   document.addEventListener("DOMContentLoaded", () => {
 
     // 1. Përgatit elementet për animacion
-    const sections = document.querySelectorAll('section, .detailed-services, .about-left, .auto-services-info');
+    const sections = document.querySelectorAll('section, .detailed-services, .about-left, .auto-services-info, .contact-banner, .contact-main-grid, .map-wrapper, .footer-content');
     const images = document.querySelectorAll('.car-img, .block-img, .auto-services-image img');
 
     sections.forEach(el => el.classList.add('reveal'));
@@ -1199,6 +1638,5 @@
   });
 
 </script>
-
 </body>
 </html>
