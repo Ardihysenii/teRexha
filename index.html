@@ -1637,6 +1637,37 @@
     }, 300);
   });
 
+
+
+
+  /*  PREVENT LAG  */
+  // Sigurohemi që scripti punon pasi të ngarkohet faqja
+  document.addEventListener('DOMContentLoaded', () => {
+
+    // Optimizimi për Mobile: I tregon browser-it që nuk do e bllokojmë scroll-in
+    document.addEventListener('touchstart', () => {}, {passive: true});
+
+    const links = document.querySelectorAll('a[href^="#"]');
+
+    links.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          // Llogarit pozicionin fiks
+          const offsetTop = targetElement.offsetTop;
+
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  });
 </script>
 </body>
 </html>
