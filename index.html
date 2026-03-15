@@ -1,13 +1,34 @@
 <!DOCTYPE html>
 <html lang="sq">
 <head>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/logo-mercedes-te-rexha-v1.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/logo-mercedes-te-rexha-v1.png">
+  <link rel="shortcut icon" type="image/png" href="/img/logo-mercedes-te-rexha-v1.png">
+  <link rel="apple-touch-icon" href="/img/logo-mercedes-te-rexha-v1.png">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "url": "https://mercedesterexha.com",
+      "logo": "https://mercedesterexha.com/img/logo-mercedes-te-rexha-v1.png",
+      "name": "Mercedes Benz Te Rexha"
+    }
+  </script>
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mercedesterexha.com">
+  <meta property="og:title" content="Mercedes Benz Te Rexha">
+  <meta property="og:image" content="https://mercedesterexha.com/img/logo-mercedes-te-rexha-v1.png">
+
+  <link rel="canonical" href="https://mercedesterexha.com">
+
+
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bydrive - Luxury Car Rentals</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="/img/logo.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/img/logo.png">
-  <link rel="shortcut icon" type="image/png" href="/img/logo.png">
-  <link rel="apple-touch-icon" href="/img/logo.png">
+  <title>Auto Service Mercedes Benz Te Rexha | Servis dhe Mirëmbajtje Veturash</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
   <style>
 
@@ -55,7 +76,7 @@
     }
 
     .logo img {
-      height: 80px;
+      height: 70px;
       display: block;
     }
 
@@ -1131,24 +1152,184 @@
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+
+
+    /* Our Staff Section */
+    /* Staff Section General Styles */
+    :root {
+      --main-white: #ffffff;
+      --text-dark: #1a1a1a;
+      --text-gray: #666666;
+      --border-light: #ececec;
+      --accent: #222; /* Mund ta ndryshosh sipas logos tende */
+    }
+
+    .staff-professional-section {
+      max-width: 1300px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: var(--main-white);
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* LEADER STYLE - FULL WIDTH */
+    .leader-container {
+      margin-bottom: 60px;
+    }
+
+    .leader-card {
+      display: flex;
+      align-items: center;
+      background: #fdfdfd;
+      border: 1px solid var(--border-light);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    }
+
+    .leader-image {
+      flex: 1;
+      height: 450px;
+    }
+
+    .leader-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .leader-content {
+      flex: 1.2;
+      padding: 50px;
+    }
+
+    .leader-content .label {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--text-gray);
+    }
+
+    .leader-content h2 {
+      font-size: 3rem;
+      margin: 10px 0;
+      color: var(--text-dark);
+    }
+
+    .leader-content p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--text-gray);
+      margin-bottom: 25px;
+    }
+
+    /* STAFF GRID - 2 COLUMNS */
+    .staff-horizontal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .staff-item-h {
+      display: flex;
+      align-items: center;
+      background: var(--main-white);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: 0.3s ease;
+    }
+
+    .staff-item-h:hover {
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      border-color: #ddd;
+    }
+
+    .s-img {
+      width: 180px; /* Madhesia e fotos anash */
+      height: 180px;
+    }
+
+    .s-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .s-text {
+      padding: 20px;
+      flex: 1;
+    }
+
+    .s-text h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: var(--text-dark);
+    }
+
+    .s-text span {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-gray);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .s-text p {
+      font-size: 0.9rem;
+      color: #888;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    /* RESPONSIVE - MOBILE */
+    @media (max-width: 992px) {
+      .leader-card {
+        flex-direction: column;
+      }
+      .leader-image {
+        width: 100%;
+        height: 350px;
+      }
+      .staff-horizontal-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .leader-content { padding: 30px; }
+      .leader-content h2 { font-size: 2rem; }
+
+      .staff-item-h {
+        flex-direction: column;
+        text-align: center;
+      }
+      .s-img {
+        width: 100%;
+        height: 250px;
+      }
+    }
   </style>
 </head>
 <body>
 
 <nav>
   <div class="logo">
-    <img src="/img/logo.png" alt="bydrive">
+    <img src="/img/logo-mercedes-te-rexha-v1.png" alt="bydrive">
     <span class="company-name">teRexha</span>
   </div>
 
   <div class="nav-links" id="navLinks">
-    <a href="#home">Home</a>
-    <a href="#about">About Us</a>
-    <a href="#Service">Our Services</a>
-    <a href="#contact">Contact Us</a>
-    <a href="#map">Our Location</a>
-    <a href="#">Preview All Pages</a>
-    <a href="#">Purchase Template</a>
+    <a href="#home">Ballina</a>
+    <a href="#about">Rreth Nesh</a>
+    <a href="#Service">Shërbimet Tona</a>
+    <a href="#contact">Kontakti</a>
+    <a href="#map">Lokacioni Ynë</a>
+    <a href="#staff">Ekipi Ynë</a>
+
   </div>
 
   <div class="nav-right" id="menuBtn">
@@ -1158,18 +1339,18 @@
 
 <section class="hero" id="home">
   <div class="hero-content">
-    <h1>The largest luxury car mechanics marketplace</h1>
-    <p>Our network offers you a wide selection of certified mechanics for high-end cars.</p>
+    <h1>Platforma lider për makinat luksoze</h1>
+    <p>Rrjeti ynë ju ofron një përzgjedhje të gjerë të mekanikëve të certifikuar për makina të klasit të lartë.</p>
   </div>
 
   <div class="hero-visual">
     <div class="circle-bg"></div>
-    <img src="/img/homepageMercedes.png" alt="Rolls Royce" class="car-img">
+    <img src="/img/Mercedes-Benz.png" alt="Rolls Royce" class="car-img">
   </div>
 
   <div class="location-wrapper">
     <div class="search-container location-btn" id="locationTrigger">
-      <span class="btn-text">Click to find us</span>
+      <span class="btn-text">Na vizitoni në hartë</span>
       <div class="search-btn">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
@@ -1196,20 +1377,22 @@
 
 
 <section class="about-us" id="about">
-  <p class="about-tagline">About Rexha Auto Service</p>
+  <p class="about-tagline">Rreth Rexha Auto Service</p>
 
 
   <div class="about-container">
     <div class="about-left">
-      <h2 class="about-title">WE PROVIDE THE BEST<br>SERVICE FOR OVER 20 YEARS</h2>
+      <h2 class="about-title">NE OFROJMË SHËRBIMIN MË TË MIRË<br>PËR MBI 20 VJET</h2>
       <br>
       <br>
 
       <p class="about-description">
-        This is the space to introduce the story of your business. Tell visitors how it got started.
-        It's an opportunity for you to describe a special service or product it offers.
-        You can use this section to share your company's history or highlight a particular
-        feature that sets it apart from competitors.
+        Me mbi dy dekada përvojë në industri, kompania jonë është ndërtuar mbi themelet e besimit,
+        integritetit dhe punës së palodhur. Ne nuk ofrojmë thjesht një shërbim; ne ofrojmë zgjidhje
+        të qëndrueshme që transformojnë vizionin tuaj në realitet.Nga projektet e vogla deri te sfidat më të mëdha, ekipi ynë i ekspertëve përdor teknologjinë
+        më të fundit dhe materialet më cilësore për të siguruar që çdo detaj të jetë i përsosur.
+        Ajo që na dallon nga të tjerët është vëmendja jonë ndaj detajeve dhe dëshira për të tejkaluar
+        çdo herë pritshmëritë e klientëve tanë.
       </p>
 
 
@@ -1234,15 +1417,14 @@
     <div class="auto-services-info order-mobile-1">
 
       <div class="black-title-box">
-        <h2>OUR AUTO REPAIR<br>SERVICES</h2>
+        <h2>SHËRBIMET TONA<br>AUTOMEKANIKE</h2>
       </div>
 
       <div class="services-text-grid">
         <div class="text-column">
-          <p>Whether it's a quick oil change or a major repair, Sanders & Yung has you covered. Our certified mechanics use quality parts and modern equipment to get the job done right.</p>
-        </div>
+          <p>Pavarësisht nëse bëhet fjalë për një ndërrim të shpejtë të vajit apo një riparim madhor, Sanders & Yung ju vjen në ndihmë. Mekanikët tanë të certifikuar përdorin pjesë cilësore dhe pajisje moderne për ta kryer punën siç duhet.</p>        </div>
         <div class="text-column">
-          <p>Every service comes with our 24month/ 24,000-mile warranty.</p>
+          <p>Çdo shërbim ofrohet me garancinë tonë të plotë prej 24 muajsh ose 24,000 miljesh, duke ju siguruar qetësi dhe besueshmëri në çdo udhëtim.</p>
         </div>
       </div>
 
@@ -1250,42 +1432,42 @@
   </div>
 </section>
 
-<h1 class="titleee">Service Categories</h1>
+<h1 class="titleee">Kategoritë e Shërbimeve</h1>
 <br>
 <br>
 
 <section class="detailed-services">
   <div class="service-block maintenance-block">
     <div class="block-visual">
-      <h2 class="block-title">General Maintenance &<br>Inspections</h2>
+      <h2 class="block-title">Mirëmbajtja e Përgjithshme &<br>Inspektimet</h2>
       <img src="/img/Termo.png" alt="Maintenance" class="block-img">
     </div>
     <div class="block-list-container">
       <ul class="service-list">
-        <li>Oil Changes & Filter Replacement</li>
-        <li>Fluid Checks & Top-Offs</li>
-        <li>Multi-Point Vehicle Inspections</li>
-        <li>State Safety & Emissions Inspections</li>
-        <li>30K/60K/90K Mile Services</li>
-        <li>Belts & Hoses</li>
-        <li>Battery Testing & Replacement</li>
+        <li>Ndërrimi i Vajit dhe Filtrave</li>
+        <li>Kontrolli dhe Plotësimi i Lëngjeve</li>
+        <li>Inspektime të Detajuara të Automjetit</li>
+        <li>Inspektimet e Sigurisë dhe Emetimeve</li>
+        <li>Shërbimet e Mirëmbajtjes (30K/60K/90K Milje)</li>
+        <li>Rripat dhe Tubat</li>
+        <li>Testimi dhe Ndërrimi i Baterisë</li>
       </ul>
     </div>
   </div>
 
   <div class="service-block brake-block">
     <div class="block-visual">
-      <h2 class="block-title">Brake Services</h2>
+      <h2 class="block-title">Shërbimet e Frenave</h2>
       <img src="/img/disc.jpg" alt="Brakes" class="block-img">
     </div>
     <div class="block-list-container">
       <ul class="service-list">
-        <li>Brake Pad & Rotor Replacement</li>
-        <li>Brake Fluid Flush</li>
-        <li>Brake Line Repair</li>
-        <li>ABS Diagnostics</li>
-        <li>Emergency Brake Service</li>
-        <li>Brake Inspections</li>
+        <li>Ndërrimi i Patinave dhe Rotorëve</li>
+        <li>Pastrimi dhe Ndërrimi i Vajit të Frenave</li>
+        <li>Riparimi i Tubave të Frenave</li>
+        <li>Diagnostikimi i ABS-it</li>
+        <li>Servisimi i Frenave të Dorës</li>
+        <li>Inspektimi i Sistemit të Frenimit</li>
       </ul>
     </div>
   </div>
@@ -1294,34 +1476,34 @@
 <section class="detailed-services is-reversed">
   <div class="service-block maintenance-block">
     <div class="block-visual">
-      <h2 class="block-title">Engine &<br>Transmission</h2>
+      <h2 class="block-title">Shërbimet e Motorit</h2>
       <img src="/img/1556e84d-bf18-4b16-8c25-81377d0db2d4.jpg" alt="Engine" class="block-img">
     </div>
     <div class="block-list-container">
       <ul class="service-list">
-        <li>Check Engine Light Diagnostics</li>
-        <li>Engine Tune-Ups</li>
-        <li>Timing Belt Replacement</li>
-        <li>Head Gasket Repair</li>
-        <li>Engine Rebuild & Replacement</li>
-        <li>Fuel System Cleaning</li>
-        <li>Spark Plug Replacement</li>
+        <li>Diagnostikimi i Dritës së Motorit (Check Engine)</li>
+        <li>Rregullimi dhe Optimizimi i Motorit (Tune-Up)</li>
+        <li>Ndërrimi i Rripit të Dhëmbëzuar (Timing Belt)</li>
+        <li>Riparimi i Gomës së Kokës së Motorit (Head Gasket)</li>
+        <li>Rikonstruksioni dhe Ndërrimi i Motorit</li>
+        <li>Pastrimi i Sistemit të Karburantit</li>
+        <li>Ndërrimi i Kandeleve</li>
       </ul>
     </div>
   </div>
 
   <div class="service-block brake-block">
     <div class="block-visual">
-      <h2 class="block-title">Tire &<br>Wheel Services</h2>
+      <h2 class="block-title">Shërbimet e Transmisionit</h2>
       <img src="/img/1009674d-0ee5-49eb-8261-7f0630e95dc7.png" alt="Tires" class="block-img">
     </div>
     <div class="block-list-container">
       <ul class="service-list">
-        <li>Transmission Fluid Change</li>
-        <li>Transmission Diagnostics</li>
-        <li>Clutch Repair & Replacement</li>
-        <li>Transmission Rebuild</li>
-        <li>Automatic & Manual Transmission Service</li>
+        <li>Ndërrimi i Vajit të Kambios</li>
+        <li>Diagnostikimi i Transmisionit</li>
+        <li>Riparimi dhe Ndërrimi i Kofrasë (Clutch)</li>
+        <li>Rikonstruksioni i Transmisionit</li>
+        <li>Servisimi i Kambios Automatike dhe Manuale</li>
       </ul>
     </div>
   </div>
@@ -1330,33 +1512,33 @@
 <section class="detailed-services">
   <div class="service-block maintenance-block">
     <div class="block-visual">
-      <h2 class="block-title">General Maintenance &<br>Inspections</h2>
+      <h2 class="block-title">Ngrohja dhe Kondicionimi i Ajrit</h2>
       <img src="/img/ac.png" alt="Maintenance" class="block-img">
     </div>
     <div class="block-list-container">
       <ul class="service-list">
-        <li>A/C Repair & Recharge</li>
-        <li>Heater Core Replacement</li>
-        <li>Climate Control Diagnostics</li>
-        <li>Coolant System Service</li>
-        <li>Radiator Repair & Replacement</li>
+        <li>Riparimi dhe Mbushja e Klimës (A/C)</li>
+        <li>Ndërrimi i Radiatorit të Ngrohjes (Heater Core)</li>
+        <li>Diagnostikimi i Sistemit të Klimatizimit</li>
+        <li>Servisimi i Sistemit të Ftohjes</li>
+        <li>Riparimi dhe Ndërrimi i Radiatorit</li>
       </ul>
     </div>
   </div>
 
   <div class="service-block brake-block">
     <div class="block-visual">
-      <h2 class="block-title">Brake Services</h2>
+      <h2 class="block-title">Sistemet Elektrike</h2>
       <img src="/img/acum.png" alt="Brakes" class="block-img">
     </div>
     <div class="block-list-container">
       <ul class="service-list">
-        <li>Battery Service & Replacement</li>
-        <li>Alternator & Starter Repair</li>
-        <li>Electrical Diagnostics</li>
-        <li>Wiring Repair</li>
-        <li>Lighting Systems</li>
-        <li>Computer Module Programming</li>
+        <li>Servisimi dhe Ndërrimi i Baterisë</li>
+        <li>Riparimi i Alternatorit dhe Starterit</li>
+        <li>Diagnostikimi Elektrik</li>
+        <li>Riparimi i Instalimeve Elektrike</li>
+        <li>Sistemet e Ndriçimit</li>
+        <li>Programimi i Modulit të Kompjuterit</li>
       </ul>
     </div>
   </div>
@@ -1365,32 +1547,32 @@
 <section class="detailed-services is-reversed">
   <div class="service-block maintenance-block">
     <div class="block-visual">
-      <h2 class="block-title">Engine &<br>Transmission</h2>
+      <h2 class="block-title">Gomat dhe Konvergjenca (Alignment)</h2>
       <img src="/img/Unnamed2.jpg" alt="Engine" class="block-img">
     </div>
     <div class="block-list-container">
       <ul class="service-list">
-        <li>Tire Sales & Installation</li>
-        <li>Tire Rotation & Balancing</li>
-        <li>Wheel Alignment (2-Wheel & 4-Wheel)</li>
-        <li>Flat Tire Repair</li>
-        <li>TPMS Service</li>
+        <li>Shitja dhe Montimi i Gomave</li>
+        <li>Ndërrimi i Pozicionit dhe Balancimi i Gomave</li>
+        <li>Konvergjenca e Rrotave (2-Rrotat & 4-Rrotat)</li>
+        <li>Riparimi i Gomës së Shpuar</li>
+        <li>Servisimi i Sistemit TPMS</li>
       </ul>
     </div>
   </div>
 
   <div class="service-block brake-block">
     <div class="block-visual">
-      <h2 class="block-title">Tire &<br>Wheel Services</h2>
+      <h2 class="block-title">Drejtimi dhe Amortizimi</h2>
       <img src="/img/Unnamed.png" alt="Tires" class="block-img">
     </div>
     <div class="block-list-container">
       <ul class="service-list">
-        <li>Shock & Strut Replacement</li>
-        <li>Power Steering Service</li>
-        <li>Ball Joint Replacement</li>
-        <li>Suspension Inspection</li>
-        <li>Steering Component Repair</li>
+        <li>Ndërrimi i Amortizatorëve dhe Susta-Amortizatorëve</li>
+        <li>Servisimi i Timonit Hidraulik (Power Steering)</li>
+        <li>Ndërrimi i Kokave të Shpatullave (Ball Joint)</li>
+        <li>Inspektimi i Sistemit të Amortizimit</li>
+        <li>Riparimi i Komponentëve të Drejtimit</li>
       </ul>
     </div>
   </div>
@@ -1409,7 +1591,7 @@
       <div class="logo-small">
         <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
       </div>
-      <h1 class="banner-title">Contacts</h1>
+      <h1 class="banner-title">Kontaktet</h1>
     </div>
     <div class="breadcrumb-tag">
       <span>Home / Contacts</span>
@@ -1419,21 +1601,21 @@
   <div class="contact-main-grid">
 
     <div class="contact-info-panel">
-      <p class="section-label">/ get in touch /</p>
-      <h2 class="hero-text">We are always ready <br> to help you and <br> answer your questions</h2>
+      <p class="section-label">/ Na Kontaktoni /</p>
+      <h2 class="hero-text">Ne jemi gjithmonë gati <br> t'ju ndihmojmë dhe <br> t'u përgjigjemi pyetjeve tuaja</h2>
       <p class="sub-description">
-        Pacific hake false trevally queen parrotfish black prickleback
-        mosshead warbonnet sweepart Greenling sleeper.
+        Ekipi ynë i ekspertëve është këtu për t'ju ofruar shërbim të nivelit të lartë
+        dhe për t'iu përgjigjur çdo kërkese tuaj teknike.
       </p>
 
       <div class="details-layout">
         <div class="detail-block">
-          <h4>Call Center</h4>
+          <h4>Qendra e Thirrjev</h4>
           <p>800 100 975 20 34</p>
           <p>+ (123) 1800-234-5678</p>
         </div>
         <div class="detail-block">
-          <h4>Our Location</h4>
+          <h4>Lokacioni yn</h4>
           <p>Auto Service Te Rexha,</p>
           <p>1103, Besianë 11000</p>
         </div>
@@ -1442,7 +1624,7 @@
           <p>neuros@mail.co</p>
         </div>
         <div class="detail-block">
-          <h4>Social network</h4>
+          <h4>Rrjetet Sociale</h4>
           <div class="social-row">
             <span>f</span>
             <span>𝕏</span>
@@ -1454,17 +1636,17 @@
     </div>
 
     <div class="form-container-card">
-      <h3>Get in Touch</h3>
-      <p class="form-intro">Define your goals and identify areas where AI can add value to your business.</p>
+      <h3>Na Kontaktoni</h3>
+      <p class="form-intro">Përcaktoni nevojat e automjetit tuaj dhe identifikoni shërbimet ku ne mund t'ju ofrojmë zgjidhje afatgjata.</p>
 
       <form class="clean-form">
-        <input type="text" placeholder="Full name" class="underlined-input" >
+        <input type="text" placeholder="Emri" class="underlined-input" >
         <input type="email" placeholder="Email" class="underlined-input">
-        <input type="text" placeholder="Subject" class="underlined-input">
-        <textarea placeholder="Message" rows="4" class="underlined-input"></textarea>
+        <input type="text" placeholder="Subjekti i kërkesës" class="underlined-input">
+        <textarea placeholder="Mesazhi" rows="4" class="underlined-input"></textarea>
 
         <button type="submit" class="black-btn">
-          Send a message <span class="arrow">→</span>
+         Dergo Mesazhin <span class="arrow">→</span>
         </button>
       </form>
     </div>
@@ -1484,6 +1666,84 @@
 </div>
 
 
+<!-- Our Staff Section -->
+
+<section class="staff-professional-section" id="staff">
+  <div class="leader-container">
+    <div class="leader-card">
+      <div class="leader-image">
+        <img src="/img/" alt="CEO">
+      </div>
+      <div class="leader-content">
+        <span class="label">Themeluesi</span>
+        <h2>Emri Mbiemri</h2>
+        <p>Këtu mund të vendosësh një përshkrim të shkurtër dhe profesional për liderin e kompanisë. Ky seksion zë hapësirë më të madhe për të treguar autoritetin dhe rëndësinë e pozicionit të tij në website-in tuaj.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="staff-horizontal-grid">
+    <div class="staff-item-h">
+      <div class="s-img"><img src="staff2.jpg" alt="Staff"></div>
+      <div class="s-text">
+        <h3>Emri Mbiemri</h3>
+        <span>Menaxher Operativ</span>
+        <p>Përshkrim i shkurtër për këtë person këtu.</p>
+      </div>
+    </div>
+
+    <div class="staff-item-h">
+      <div class="s-img"><img src="staff3.jpg" alt="Staff"></div>
+      <div class="s-text">
+        <h3>Emri Mbiemri</h3>
+        <span>Drejtor Kreativ</span>
+        <p>Përshkrim i shkurtër për këtë person këtu.</p>
+      </div>
+    </div>
+
+    <div class="staff-item-h">
+      <div class="s-img"><img src="staff4.jpg" alt="Staff"></div>
+      <div class="s-text">
+        <h3>Emri Mbiemri</h3>
+        <span>Zhvillues Softueri</span>
+        <p>Përshkrim i shkurtër për këtë person këtu.</p>
+      </div>
+    </div>
+
+    <div class="staff-item-h">
+      <div class="s-img"><img src="staff5.jpg" alt="Staff"></div>
+      <div class="s-text">
+        <h3>Emri Mbiemri</h3>
+        <span>Marketing Specialist</span>
+        <p>Përshkrim i shkurtër për këtë person këtu.</p>
+      </div>
+    </div>
+
+    <div class="staff-item-h">
+      <div class="s-img"><img src="staff6.jpg" alt="Staff"></div>
+      <div class="s-text">
+        <h3>Emri Mbiemri</h3>
+        <span>Dizajner Grafik</span>
+        <p>Përshkrim i shkurtër për këtë person këtu.</p>
+      </div>
+    </div>
+
+    <div class="staff-item-h">
+      <div class="s-img"><img src="staff7.jpg" alt="Staff"></div>
+      <div class="s-text">
+        <h3>Emri Mbiemri</h3>
+        <span>Suport Teknik</span>
+        <p>Përshkrim i shkurtër për këtë person këtu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 
 
 
@@ -1494,10 +1754,10 @@
       <p>Luxury automotive care and precision mechanics. We treat every vehicle with the respect it deserves.</p>
 
       <div class="social-links">
-        <a href="#" aria-label="Instagram">
+        <a href="https://www.instagram.com/autoserviceterexha/" aria-label="Instagram">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
         </a>
-        <a href="#" aria-label="Facebook">
+        <a href="https://www.facebook.com/AutoserviceTeRexha" aria-label="Facebook">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
         </a>
         <a href="#" aria-label="TikTok">
@@ -1509,11 +1769,12 @@
     <div class="footer-group">
       <h4>Navigation</h4>
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#Service">Services</a></li>
-        <li><a href="#">Our Staff</a></li>
-        <li><a href="#">Our location</a></li>
+        <li><a href="#home">Ballina</a></li>
+        <li><a href="#about">Rreth Nesh</a></li>
+        <li><a href="#Service">Shërbimet Tona</a></li>
+        <li><a href="#contact">Kontakti</a></li>
+        <li><a href="#map">Lokacioni Ynë</a></li>
+        <li><a href="#staff">Ekipi Ynë</a></li>
       </ul>
     </div>
 
@@ -1522,7 +1783,7 @@
       <ul>
         <li><a href="tel:+38344123456">+383 (0) 44 123 456</a></li>
         <li><a href="mailto:info@terexha.com">info@terexha.com</a></li>
-        <li><a href="#">Podujevo, Kosovo</a></li>
+        <li><a href="#map">Podujevo, Kosovo</a></li>
       </ul>
     </div>
   </div>
@@ -1626,7 +1887,7 @@
   document.addEventListener("DOMContentLoaded", () => {
 
     // 1. Përgatit elementet për animacion
-    const sections = document.querySelectorAll('section, .detailed-services, .about-left, .auto-services-info, .contact-banner, .contact-main-grid, .map-wrapper, .footer-content');
+    const sections = document.querySelectorAll('section, .detailed-services, .about-left, .auto-services-info, .banner-title, .contact-banner');
     const images = document.querySelectorAll('.car-img, .block-img, .auto-services-image img');
 
     sections.forEach(el => el.classList.add('reveal'));
