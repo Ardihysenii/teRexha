@@ -15,7 +15,7 @@ module.exports = merge(common, {
     // 1. Ky plugin krijon index.html dhe shton logon automatikisht
     new HtmlWebpackPlugin({
       template: './index.html',
-      favicon: './img/Mercedes-Benz.png',
+      favicon: './img/logo-mercedes-te-rexha-v1.png',
     }),
 
     // 2. Ky plugin vetëm kopjon dosjet/skedarët ashtu siç janë
