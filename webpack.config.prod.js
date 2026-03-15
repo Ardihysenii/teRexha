@@ -12,13 +12,13 @@ module.exports = merge(common, {
     clean: true,
   },
   plugins: [
-    // 1. Ky plugin krijon index.html dhe shton logon automatikisht
+
     new HtmlWebpackPlugin({
       template: './index.html',
       favicon: './img/logo-mercedes-te-rexha-v1.png',
     }),
 
-    // 2. Ky plugin vetëm kopjon dosjet/skedarët ashtu siç janë
+
     new CopyPlugin({
       patterns: [
         { from: 'img', to: 'img' },

@@ -1159,163 +1159,67 @@
 
 
 
-    /* Our Staff Section */
-    /* Staff Section General Styles */
-    :root {
-      --main-white: #ffffff;
-      --text-dark: #1a1a1a;
-      --text-gray: #666666;
-      --border-light: #ececec;
-      --accent: #222; /* Mund ta ndryshosh sipas logos tende */
-    }
+   /*  Our Staff  */
 
-    .staff-professional-section {
-      max-width: 1300px;
-      margin: 50px auto;
-      padding: 20px;
-      background-color: var(--main-white);
-      font-family: 'Inter', sans-serif;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
 
-    /* LEADER STYLE - FULL WIDTH */
-    .leader-container {
-      margin-bottom: 60px;
-    }
-
-    .leader-card {
-      display: flex;
-      align-items: center;
-      background: #fdfdfd;
-      border: 1px solid var(--border-light);
-      border-radius: 15px;
+    .staff-reveal-section {
+      width: 100%;
+      height: 550px; /* Lartësia më e vogël, jo sa gjithë ekrani */
+      position: relative;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+      background-color: #111;
     }
 
-    .leader-image {
-      flex: 1;
-      height: 450px;
-    }
-
-    .leader-image img {
+    .staff-sticky-wrapper {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-    }
-
-    .leader-content {
-      flex: 1.2;
-      padding: 50px;
-    }
-
-    .leader-content .label {
-      text-transform: uppercase;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: var(--text-gray);
-    }
-
-    .leader-content h2 {
-      font-size: 3rem;
-      margin: 10px 0;
-      color: var(--text-dark);
-    }
-
-    .leader-content p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: var(--text-gray);
-      margin-bottom: 25px;
-    }
-
-    /* STAFF GRID - 2 COLUMNS */
-    .staff-horizontal-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-    }
-
-    .staff-item-h {
       display: flex;
       align-items: center;
-      background: var(--main-white);
-      border: 1px solid var(--border-light);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: 0.3s ease;
+      justify-content: center;
     }
 
-    .staff-item-h:hover {
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-      border-color: #ddd;
-    }
-
-    .s-img {
-      width: 180px; /* Madhesia e fotos anash */
-      height: 180px;
-    }
-
-    .s-img img {
+    .staff-photo {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: cover; /* Mbush hapësirën */
+      object-position: center 20%; /* Fokusohuni te fytyrat */
+      filter: brightness(50%); /* Pak më errët që të shkëlqejë titulli */
     }
 
-    .s-text {
-      padding: 20px;
-      flex: 1;
+    .staff-overlay-title {
+      position: absolute;
+      z-index: 5;
+      pointer-events: none; /* Që të mos pengojë klikimet */
     }
 
-    .s-text h3 {
-      margin: 0;
-      font-size: 1.2rem;
-      color: var(--text-dark);
-    }
-
-    .s-text span {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-gray);
-      margin-bottom: 8px;
+    .staff-overlay-title h1 {
+      font-family: 'Montserrat', sans-serif;
+      color: #ffffff;
+      font-size: 3.5rem;
       text-transform: uppercase;
-    }
-
-    .s-text p {
-      font-size: 0.9rem;
-      color: #888;
+      letter-spacing: 3px;
       margin: 0;
-      line-height: 1.4;
+      text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
     }
 
-    /* RESPONSIVE - MOBILE */
-    @media (max-width: 992px) {
-      .leader-card {
-        flex-direction: column;
+    /* Rregullimi për Mobile (Kritike për t'i parë të gjithë) */
+    @media (max-width: 768px) {
+      .staff-reveal-section {
+        height: 300px; /* Edhe më e shkurtër në mobile */
       }
-      .leader-image {
-        width: 100%;
-        height: 350px;
+
+      .staff-photo {
+        object-fit: cover;
+        /* Kjo siguron që fotoja të mos bëhet shumë "zoom" në mobile */
       }
-      .staff-horizontal-grid {
-        grid-template-columns: 1fr;
+
+      .staff-overlay-title h1 {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
       }
     }
 
-    @media (max-width: 600px) {
-      .leader-content { padding: 30px; }
-      .leader-content h2 { font-size: 2rem; }
-
-      .staff-item-h {
-        flex-direction: column;
-        text-align: center;
-      }
-      .s-img {
-        width: 100%;
-        height: 250px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -1620,8 +1524,9 @@
         </div>
         <div class="detail-block">
           <h4>Lokacioni yn</h4>
-          <p>Auto Service Te Rexha,</p>
-          <p>1103, Besianë 11000</p>
+         <a href="#map">
+           <p>Auto Service Te Rexha,</p>
+           <p>1103, Besianë 11000</p></a>
         </div>
         <div class="detail-block">
           <h4>Email</h4>
@@ -1630,7 +1535,7 @@
         <div class="detail-block">
           <h4>Rrjetet Sociale</h4>
           <div class="social-row">
-            <span>f</span>
+           <a href="https://www.facebook.com/AutoserviceTeRexha"><span>f</span></a>
             <span>𝕏</span>
             <span>in</span>
             <span>y</span>
@@ -1671,81 +1576,15 @@
 
 
 <!-- Our Staff Section -->
+<section class="staff-reveal-section" id="staff">
+  <div class="staff-sticky-wrapper">
+    <img src="/img/Unnamed5.png" alt="Ekipi Jonë" class="staff-photo">
 
-<section class="staff-professional-section" id="staff">
-  <div class="leader-container">
-    <div class="leader-card">
-      <div class="leader-image">
-        <img src="/img/" alt="CEO">
-      </div>
-      <div class="leader-content">
-        <span class="label">Themeluesi</span>
-        <h2>Emri Mbiemri</h2>
-        <p>Këtu mund të vendosësh një përshkrim të shkurtër dhe profesional për liderin e kompanisë. Ky seksion zë hapësirë më të madhe për të treguar autoritetin dhe rëndësinë e pozicionit të tij në website-in tuaj.</p>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="staff-horizontal-grid">
-    <div class="staff-item-h">
-      <div class="s-img"><img src="staff2.jpg" alt="Staff"></div>
-      <div class="s-text">
-        <h3>Emri Mbiemri</h3>
-        <span>Menaxher Operativ</span>
-        <p>Përshkrim i shkurtër për këtë person këtu.</p>
-      </div>
-    </div>
-
-    <div class="staff-item-h">
-      <div class="s-img"><img src="staff3.jpg" alt="Staff"></div>
-      <div class="s-text">
-        <h3>Emri Mbiemri</h3>
-        <span>Drejtor Kreativ</span>
-        <p>Përshkrim i shkurtër për këtë person këtu.</p>
-      </div>
-    </div>
-
-    <div class="staff-item-h">
-      <div class="s-img"><img src="staff4.jpg" alt="Staff"></div>
-      <div class="s-text">
-        <h3>Emri Mbiemri</h3>
-        <span>Zhvillues Softueri</span>
-        <p>Përshkrim i shkurtër për këtë person këtu.</p>
-      </div>
-    </div>
-
-    <div class="staff-item-h">
-      <div class="s-img"><img src="staff5.jpg" alt="Staff"></div>
-      <div class="s-text">
-        <h3>Emri Mbiemri</h3>
-        <span>Marketing Specialist</span>
-        <p>Përshkrim i shkurtër për këtë person këtu.</p>
-      </div>
-    </div>
-
-    <div class="staff-item-h">
-      <div class="s-img"><img src="staff6.jpg" alt="Staff"></div>
-      <div class="s-text">
-        <h3>Emri Mbiemri</h3>
-        <span>Dizajner Grafik</span>
-        <p>Përshkrim i shkurtër për këtë person këtu.</p>
-      </div>
-    </div>
-
-    <div class="staff-item-h">
-      <div class="s-img"><img src="staff7.jpg" alt="Staff"></div>
-      <div class="s-text">
-        <h3>Emri Mbiemri</h3>
-        <span>Suport Teknik</span>
-        <p>Përshkrim i shkurtër për këtë person këtu.</p>
-      </div>
+    <div class="staff-overlay-title">
+      <h1>Ekipi Ynë</h1>
     </div>
   </div>
 </section>
-
 
 
 
