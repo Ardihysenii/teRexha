@@ -1,5 +1,8 @@
 # www.robotstxt.org/
 
-# Allow crawling of all content
+# Lejo skanimin e të gjithë përmbajtjes
 User-agent: *
 Disallow:
+
+# Tregoji robotëve ku e ke listën e faqeve
+Sitemap: https://www.mercedesterexha.com/sitemap.xml
