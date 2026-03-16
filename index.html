@@ -1529,7 +1529,7 @@
         </div>
         <div class="detail-block">
           <h4>Email</h4>
-          <p>neuros@mail.co</p>
+          <p>Krasniqiblerim331@gmail.com</p>
         </div>
         <div class="detail-block">
           <h4>Rrjetet Sociale</h4>
@@ -1546,19 +1546,19 @@
     <div class="form-container-card">
       <h3>Na Kontaktoni</h3>
       <p class="form-intro">Përcaktoni nevojat e automjetit tuaj dhe identifikoni shërbimet ku ne mund t'ju ofrojmë zgjidhje afatgjata.</p>
-
       <form class="clean-form">
         <input type="text" placeholder="Emri" class="underlined-input" >
         <input type="email" placeholder="Email" class="underlined-input">
         <input type="text" placeholder="Subjekti i kërkesës" class="underlined-input">
         <textarea placeholder="Mesazhi" rows="4" class="underlined-input"></textarea>
-
         <button type="submit" class="black-btn">
-         Dergo Mesazhin <span class="arrow">→</span>
+          Dergo Mesazhin <span class="arrow">→</span>
         </button>
       </form>
     </div>
   </div>
+
+
 
   <div id="map" class="map-wrapper" style="width: 100%; border-radius: 40px; overflow: hidden; margin-top: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
     <iframe
@@ -1638,6 +1638,8 @@
 
 
 <script>
+
+
   const menuBtn = document.getElementById('menuBtn');
   const navLinks = document.getElementById('navLinks');
   const menuIcon = document.getElementById('menuIcon');
@@ -1854,6 +1856,69 @@
       prefetchLink.href = href;
       document.head.appendChild(prefetchLink);
     }, { once: true });
+  });
+
+
+
+</script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript">
+  (function() {
+    emailjs.init("GGlehCBaaNBNxPA4r");
+  })();
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Kapim formën përmes klasës meqë nuk ka ID
+    const form = document.querySelector('.clean-form');
+
+    if(form) {
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const btn = this.querySelector('.black-btn');
+        const originalText = 'Dergo Mesazhin <span class="arrow">→</span>';
+
+        // Kapim vlerat nga inputet sipas radhës (0, 1, 2, 3)
+        const inputs = this.querySelectorAll('.underlined-input');
+
+        const templateParams = {
+          from_name: inputs[0].value,    // Inputi i parë (Emri)
+          from_email: inputs[1].value,   // Inputi i dytë (Email)
+          subject: inputs[2].value,      // Inputi i tretë (Subjekti)
+          message: inputs[3].value       // Textarea (Mesazhi)
+        };
+
+        btn.innerText = "Duke u dërguar...";
+        btn.disabled = true;
+
+        // Përdorim send() në vend të sendForm() meqë nuk kemi "name" attributes
+        emailjs.send('service_ce14qqi', 'template_ajc338e', templateParams)
+          .then(function() {
+            Swal.fire({
+              title: 'Faleminderit!',
+              text: 'Mesazhi juaj u dërgua me sukses.',
+              icon: 'success',
+              confirmButtonColor: '#000',
+              confirmButtonText: 'Në rregull'
+            });
+
+            form.reset();
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+          }, function(error) {
+            Swal.fire({
+              title: 'Gabim!',
+              text: 'Dërgimi dështoi: ' + JSON.stringify(error),
+              icon: 'error',
+              confirmButtonColor: '#000'
+            });
+
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+          });
+      });
+    }
   });
 </script>
 </body>
