@@ -7,7 +7,7 @@ const path = require('path');
 module.exports = merge(common, {
   mode: 'production',
   output: {
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
     clean: true,
   },
@@ -15,7 +15,7 @@ module.exports = merge(common, {
 
     new HtmlWebpackPlugin({
       template: './index.html',
-      favicon: './img/logo-mercedes-te-rexha-v1.png',
+      favicon: './img/logo-mercedes-te-rexha-favicon.png',
     }),
 
 
