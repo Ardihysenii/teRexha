@@ -1,8 +1,10 @@
-# www.robotstxt.org/
-
-# Lejo skanimin e të gjithë përmbajtjes
+# Lejo të gjithë robotët e kërkimit (Google, Bing, etj.)
 User-agent: *
-Disallow:
+Allow: /
 
-# Tregoji robotëve ku e ke listën e faqeve
+# Specifikisht për Googlebot që të jetë më agresiv në skanim
+User-agent: Googlebot
+Allow: /
+
+# Linku i hartës së faqes për indeksim të shpejtë
 Sitemap: https://www.mercedesterexha.com/sitemap.xml
